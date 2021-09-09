@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "shopdon-1614963409256",
+  "private_key_id": "0971c9e43e4660e50903eb0a9bbbe12575b0c003",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDF5oAhTZlCwAIb\n+LuzH7Rh3gkHpHfXN/W7KdSHxBPSINsc7V82ur1EdnjGTnSxDo+YDqiNgHvr2XwZ\naWe2jyqpZ2Obd2DCNkGNrpxbbTGWpr8aoejK5WOyMJacElh5ReBmHAvL2xEHccL8\n1+weqWoqoq1Lk/ey2JFkM1pdPUNkSnrmvbmiO9ahMQT0ElUiAPZIn/icXrbh14lD\n1j1NgL9IBCiIh7se2CwI52WPu28Riy6X6TqoZDdoOEAaSuLrf15e3v+kweFvkYUe\nSUYlTNLrx6cKPo8ksErMobrymSEHcYoAUOXuh38E8YPj9LxoMYl3jNDvqyJ/V3a2\n6yl5bFsHAgMBAAECggEAXfzDu41UDWyNU+WEl2SmUZiW50dIFzGfhd0u76/CzhgG\nmC1v+9kiTGKLp3rZVsGYltnXWSS9NdzbYGI7/GrwEvZkSxCeJn6IEZbs8Urhsy/M\nMQTWP45EE/uZe9QGqsnx8ey9+Xo4EzYHKfgOTt2c61TJQsyqZgkOu+zbrM6MtBMH\n929JTMR2vch4SHjd/9yLz7M/eOLRZfjiMl0tfhsiXjaM5/coYk+ukV0duBC8Zrg9\n3YlvFmhDQOWpxPAjb980D4cDDDE+KLwe5TsSCw2ZnTv85W3kf4LK8DYIjfdPjhJo\n/+T/NueFicKy+wmxdgI753HX5UyBJHbIkMYy2EaXsQKBgQD+XqLYcRHrAYY8wqLl\nKkPfsYHX2ykIMwpDW4GiDqZ7QUhLwBmxQ986NTT2GQHOZQ86lzqJQNE3IYTxX5GX\n+bXu92UXMvXd5AdInb3A2T37nGSDCWXuy1Tc8ggwtnp7CxHW70FZI4qP7ZcTIE1x\n56BPYbbv6anNp4GyncedgZhhTwKBgQDHKzX9uUmsLL9A1AQCEaBJjtfLoDvS8riD\nFRIkZs/ubUpwqZHKDQuKyPdTlHI3GF+F5+5jw0mFyibFe9hfHr0n7H81VEZ/BHfn\n9JtZ82vRbCUQ9ZA5IafeHZNKfeuGvpjN6x6LBn9R1C23Mj1smufrBaBS6ZfV0Wl3\n8HPEb7PMyQKBgAwz7gwEIJ/tissPa1EjHe51TY1Vbjp+eFeS5D0qBsKS9yzrIlBm\nuSbJtqi3umZ0Yq6k4qIDAgZrDT2nIAzyZc/4/liGkVT7w32wU5IU2exgLFI8+S7j\ngka3Nb1gg6+zcD+narMkCVmuRDkeq5hzTDWCsov/4a2EA6zV9OWRegXxAoGBAMPo\nbSM1rpH9MeLCqW6fh9rS9tEEu9OzjGrjvwSvXLhaKG7JXO4yBrhtFVrRGce34b4F\ndSgMX7WKMrjuKNbnlYg/yKDcVLt72bX/lQ/VsKg+h/c2lLadtFF3JfqQAax4rjVe\noJx/t5z16EHa2TCK7rTuw9TKkN9xLR0dF8KRXXqBAoGBAKlkhJok0S3/9n1Agrc0\nuWN/gWc+Oyxhxbb9+QC9XZ70BgqbbGOT+sIDWERWqL3SceSvGi6aESYRLe5xM0Tm\nyjz90dDuUZWwgB3TC4Sy3/DUC+jw9GPs/qP8iHdkv2kQPgMxUfTGaw+8PLaRk0IH\n8wfyKPz6S/4LuhUkuQXTCU0D\n-----END PRIVATE KEY-----\n",
+  "client_email": "shopdon@shopdon-1614963409256.iam.gserviceaccount.com",
+  "client_id": "116281488265984189230",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/shopdon%40shopdon-1614963409256.iam.gserviceaccount.com"
+}
