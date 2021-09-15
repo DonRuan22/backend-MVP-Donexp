@@ -7,7 +7,7 @@ class DBConnection {
               user: "rdonino",
               password: "231295Don@",
               server: "donexp2.database.windows.net",
-              database: 'donexp'
+              database: 'donexp-2021-2'
        });
     }
     catch(error) {
