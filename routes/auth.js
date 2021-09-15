@@ -36,6 +36,7 @@ router.post('/login', [helper.hasAuthFields, helper.isPasswordAndUserMatch], asy
     else{
         user= null;
         res.json({user: null});
+        console.log("error")
     }
 });			
 

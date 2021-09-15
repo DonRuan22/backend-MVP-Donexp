@@ -6,7 +6,7 @@ class DBConnection {
        return await mssql.connect({
               user: "rdonino",
               password: "231295Don@",
-              server: "donexp.database.windows.net",
+              server: "donexp2.database.windows.net",
               database: 'donexp'
        });
     }
