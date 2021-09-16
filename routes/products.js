@@ -300,6 +300,9 @@ router.post('/add', async (req, res) => {
     let productShortDescription = req.body.short_description;
     let productCat = req.body.cat;
     let userId = req.body.userId;
+    let productBrand = req.body.brand;
+    let productSizes = req.body.sizes;
+    let productColor = req.body.color;
 
     /*
     let register = await database.table('register').filter({user_id: userId}).get();
@@ -332,9 +335,12 @@ router.post('/add', async (req, res) => {
                                     .input('productQuantity', mssql.VarChar, productQuantity)
                                     .input('productShortDescription', mssql.VarChar, productShortDescription)
                                     .input('productCat', mssql.VarChar, productCat)
+                                    .input('productBrand', mssql.VarChar, productBrand)
+                                    .input('productSizes', mssql.VarChar, productSizes)
+                                    .input('productColors', mssql.VarChar, productColor)
                                     .input('shop_id', mssql.Int, register['id'])
                                     .output("id", mssql.Int)
-                                    .query("INSERT INTO products (title, image, description, price, quantity, short_desc, cat, shop) VALUES (@productTitle, @productImage, @productDescription, @productPrice, @productQuantity, @productShortDescription, @productCat, @shop_id);SELECT @id = SCOPE_IDENTITY()");
+                                    .query("INSERT INTO products (title, image, description, price, quantity, short_desc, cat, shop, brand, sizes, color) VALUES (@productTitle, @productImage, @productDescription, @productPrice, @productQuantity, @productShortDescription, @productCat, @shop_id, @productBrand, @productSizes, @productColors);SELECT @id = SCOPE_IDENTITY()");
     //var productId = product.output['id'];
 
     try{
