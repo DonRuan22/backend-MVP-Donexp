@@ -118,7 +118,7 @@ router.get('/shop/:userId', async function (req, res) {       // Sending Page Qu
    const conn = await mssqlcon.conn;
    let products = await conn.request()
                          .input('userId', mssql.Int, userId)
-                         .query("SELECT products.title, products.price, products.quantity, products.description, products.image, products.id FROM products, shop WHERE products.shop = shop.id AND shop.userId = @userId");
+                         .query("SELECT products.title, products.price, products.quantity, products.description, products.image, products.id, products.short_desc, products.cat FROM products, shop WHERE products.shop = shop.id AND shop.userId = @userId");
    products = products.recordset.slice(startValue, endValue)
    let prods = products.sort(function(a, b) {return a.id - b.id});
    try{
