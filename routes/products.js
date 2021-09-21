@@ -179,6 +179,52 @@ router.get('/:prodId', async (req, res) => {
     }catch(err){res.json(err)}
 });
 
+/* GET ONE PRODUCT*/
+router.get('/model/:prodModel', async (req, res) => {
+    let productModel = req.params.model;
+    /*
+    database.table('products as p')
+        .join([
+            {
+                table: "categories as c",
+                on: `c.id = p.cat_id`
+            }
+        ])
+        .withFields(['c.title as category',
+            'p.title as name',
+            'p.price',
+            'p.quantity',
+            'p.description',
+            'p.image',
+            'p.id',
+            'p.images'
+        ])
+        .filter({'p.id': productId})
+        .get()
+        .then(prod => {
+            console.log(prod);
+            if (prod) {
+                res.status(200).json(prod);
+            } else {
+                res.json({message: `No product found with id ${productId}`});
+            }
+        }).catch(err => res.json(err));
+    */
+    const conn = await mssqlcon.conn;
+    let products = await conn.request()
+                            .input('productModel', mssql.Int, productModel)
+                            .query("SELECT products.title, products.price, products.quantity, products.description, products.image, products.id, products.images, products.cat, products.brand, products.sizes, products.color FROM products WHERE products.title = @productModel");
+    prod = products.recordset[0];
+    try{
+        console.log(prod);
+        if (prod) {
+            res.status(200).json(prod);
+        } else {
+            res.json({message: `No product found model ${productModel}`});
+        }
+    }catch(err){res.json(err)}
+});
+
 
 router.delete("/delete/:prodId", async(req, res) => {
     let prodId = req.params.prodId;
