@@ -212,7 +212,7 @@ router.get('/model/:prodModel', async (req, res) => {
     */
     const conn = await mssqlcon.conn;
     let products = await conn.request()
-                            .input('productModel', mssql.Int, productModel)
+                            .input('productModel', mssql.VarChar, productModel)
                             .query("SELECT products.title, products.price, products.quantity, products.description, products.image, products.id, products.short_desc, products.cat, products.brand, products.sizes, products.color WHERE products.title = @productModel");
     prod = products.recordset[0];
     try{
