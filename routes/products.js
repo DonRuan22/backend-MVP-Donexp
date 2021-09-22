@@ -182,6 +182,7 @@ router.get('/:prodId', async (req, res) => {
 /* GET ONE PRODUCT*/
 router.get('/model/:prodModel', async (req, res) => {
     let productModel = req.query.prodModel;
+    console.log(productModel+ ' test function');
     /*
     database.table('products as p')
         .join([
