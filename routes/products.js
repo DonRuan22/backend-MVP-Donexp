@@ -180,8 +180,8 @@ router.get('/:prodId', async (req, res) => {
 });
 
 /* GET ONE PRODUCT*/
-router.get('/model/', async (req, res) => {
-    let productModel = req.body.prodModel;
+router.get('/model', async (req, res) => {
+    let productModel = req.query.prodModel;
     /*
     database.table('products as p')
         .join([
