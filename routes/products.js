@@ -167,7 +167,7 @@ router.get('/:prodId', async (req, res) => {
     const conn = await mssqlcon.conn;
     let products = await conn.request()
                             .input('productId', mssql.Int, productId)
-                            .query("SELECT products.title, products.price, products.quantity, products.description, products.image, products.id, products.images, products.cat, products.brand, products.sizes, products.color FROM products WHERE products.id = @productId");
+                            .query("SELECT products.title, products.price, products.quantity, products.description, products.image, products.id, products.images, products.cat FROM products WHERE products.id = @productId");
     prod = products.recordset[0];
     try{
         console.log(prod);
@@ -178,7 +178,7 @@ router.get('/:prodId', async (req, res) => {
         }
     }catch(err){res.json(err)}
 });
-
+/*products.brand, products.sizes, products.color
 /* GET ONE PRODUCT*/
 router.get('/model/:prodModel', async (req, res) => {
     let productModel = req.query.prodModel;
