@@ -226,7 +226,7 @@ router.post('/search', async (req, res) => {
     let products = await conn.request()
                             .input('productModel', mssql.VarChar, productTitle)
                             .input('productCat', mssql.VarChar, productCat)
-                            .input('productPrice', mssql.VarChar, productPrice)
+                            .input('productPrice', mssql.SmallMoney, productPrice)
                             .input('productBrand', mssql.VarChar, productBrand)
                             .input('productSize', mssql.VarChar, productSize)
                             .input('productColor', mssql.VarChar, productColor)
