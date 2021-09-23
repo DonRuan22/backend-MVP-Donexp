@@ -189,10 +189,17 @@ router.post('/search', async (req, res) => {
 
     if (productTitle == undefined){productTitle = 'ANY'};
     if (productCat == undefined){productCat = 'ANY'};
-    if (productPrice == undefined){productPrice = ''};
+    if (productPrice == null){productPrice = ''};
     if (productBrand == undefined){productBrand = 'ANY'};
     if (productSize == undefined){productSize = ''};
     if (productColor == undefined){productColor = ''};
+
+    console.log(productTitle);
+    console.log(productCat);
+    console.log(productPrice);
+    console.log(productBrand);
+    console.log(productSize);
+    console.log(productColor);
     
     /*
     database.table('products as p')
