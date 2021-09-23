@@ -179,9 +179,21 @@ router.get('/:prodId', async (req, res) => {
     }catch(err){res.json(err)}
 });
 /* GET ONE PRODUCT*/
-router.get('/model/:prodModel', async (req, res) => {
-    let productModel = req.params.prodModel;
-    console.log(productModel+ ' test function');
+router.post('/search', async (req, res) => {
+    let productTitle = req.body.prodModel;
+    let productPrice = req.body.price;
+    let productCat = req.body.cat;
+    let productBrand = req.body.brand;
+    let productSize = req.body.size
+    let productColor = req.body.color;
+
+    if (productTitle == undefined){productTitle = 'ANY'};
+    if (productCat == undefined){productCat = 'ANY'};
+    if (productPrice == undefined){productPrice = 'ANY'};
+    if (productBrand == undefined){productBrand = 'ANY'};
+    if (productSize == undefined){productSize = ''};
+    if (productColor == undefined){productColor = ''};
+    
     /*
     database.table('products as p')
         .join([
@@ -212,8 +224,13 @@ router.get('/model/:prodModel', async (req, res) => {
     */
     const conn = await mssqlcon.conn;
     let products = await conn.request()
-                            .input('productModel', mssql.VarChar, productModel)
-                            .query("SELECT products.title, products.price, products.quantity, products.description, products.image, products.id, products.short_desc, products.cat, products.brand, products.sizes, products.color FROM products WHERE products.title = @productModel");
+                            .input('productModel', mssql.VarChar, productTitle)
+                            .input('productCat', mssql.VarChar, productCat)
+                            .input('productPrice', mssql.VarChar, productPrice)
+                            .input('productBrand', mssql.VarChar, productBrand)
+                            .input('productSize', mssql.VarChar, productSize)
+                            .input('productColor', mssql.VarChar, productColor)
+                            .query("SELECT products.title, products.price, products.quantity, products.description, products.image, products.id, products.short_desc, products.cat, products.brand, products.sizes, products.color FROM products WHERE products.title = @productModel AND products.cat = @productCat AND products.price = @productPrice AND products.brand = @productBrand AND products.sizes LIKE '%@productSize%' AND products.color LIKE '%@productColor%'");
     prod = products.recordset[0];
     try{
         console.log(prod);
