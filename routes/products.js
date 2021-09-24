@@ -189,7 +189,7 @@ router.post('/search', async (req, res) => {
 
     if (productTitle == undefined){productTitle = ''};
     if (productCat == undefined){productCat = ''};
-    if (productPrice == null){productPrice = ''};
+    if (productPrice == undefined){productPrice = ''};
     if (productBrand == undefined){productBrand = ''};
     if (productSize == undefined){productSize = ''};
     if (productColor == undefined){productColor = ''};
@@ -233,7 +233,7 @@ router.post('/search', async (req, res) => {
     let products = await conn.request()
                             .input('productModel', mssql.VarChar, productTitle)
                             .input('productCat', mssql.VarChar, productCat)
-                            .input('productPrice', mssql.SmallMoney, productPrice)
+                            .input('productPrice', mssql.VarChar, productPrice)
                             .input('productBrand', mssql.VarChar, productBrand)
                             .input('productSize', mssql.VarChar, productSize)
                             .input('productColor', mssql.VarChar, productColor)
