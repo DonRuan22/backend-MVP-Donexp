@@ -187,10 +187,10 @@ router.post('/search', async (req, res) => {
     let productSize = req.body.size
     let productColor = req.body.color;
 
-    if (productTitle == undefined){productTitle = 'ANY'};
-    if (productCat == undefined){productCat = 'ANY'};
+    if (productTitle == undefined){productTitle = ''};
+    if (productCat == undefined){productCat = ''};
     if (productPrice == null){productPrice = ''};
-    if (productBrand == undefined){productBrand = 'ANY'};
+    if (productBrand == undefined){productBrand = ''};
     if (productSize == undefined){productSize = ''};
     if (productColor == undefined){productColor = ''};
 
@@ -237,7 +237,7 @@ router.post('/search', async (req, res) => {
                             .input('productBrand', mssql.VarChar, productBrand)
                             .input('productSize', mssql.VarChar, productSize)
                             .input('productColor', mssql.VarChar, productColor)
-                            .query("SELECT products.title, products.price, products.quantity, products.description, products.image, products.id, products.short_desc, products.cat, products.brand, products.sizes, products.color FROM products WHERE products.title = @productModel AND products.cat = @productCat AND products.price LIKE '@productPrice%' AND products.brand = @productBrand AND products.sizes LIKE '@productSize%' AND products.color LIKE '%@productColor%'");
+                            .query("SELECT products.title, products.price, products.quantity, products.description, products.image, products.id, products.short_desc, products.cat, products.brand, products.sizes, products.color FROM products WHERE products.title = CASE WHEN @productModel !='' THEN @productModel ELSE products.title END AND products.cat = CASE WHEN @productCat !='' THEN @productCat ELSE products.cat END AND products.price LIKE '@productPrice%' AND products.brand = CASE WHEN @productBrand !='' THEN @productBrand ELSE products.brand END AND products.sizes LIKE '@productSize%' AND products.color LIKE '%@productColor%'");
     prod = products.recordset[0];
     try{
         console.log(prod);
