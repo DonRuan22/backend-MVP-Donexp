@@ -237,7 +237,7 @@ router.post('/search', async (req, res) => {
                             .input('productBrand', mssql.VarChar, productBrand)
                             .input('productSize', mssql.VarChar, productSize)
                             .input('productColor', mssql.VarChar, productColor)
-                            .query("SELECT products.title, products.price, products.quantity, products.description, products.image, products.id, products.short_desc, products.cat, products.brand, products.sizes, products.color FROM products WHERE products.title = CASE WHEN @productModel !='' THEN @productModel ELSE products.title END AND products.cat = CASE WHEN @productCat !='' THEN @productCat ELSE products.cat END AND products.price LIKE ''%''");
+                            .query("SELECT products.title, products.price, products.quantity, products.description, products.image, products.id, products.short_desc, products.cat, products.brand, products.sizes, products.color FROM products WHERE products.title = CASE WHEN @productModel !='' THEN @productModel ELSE products.title END AND products.cat = CASE WHEN @productCat !='' THEN @productCat ELSE products.cat END AND products.price LIKE ''@productPrice%'' AND products.brand = CASE WHEN @productBrand !='' THEN @productBrand ELSE products.brand END AND products.sizes LIKE ''%@productSize%'' AND products.color LIKE ''%@productColor%''");
                             //AND products.cat = CASE WHEN @productCat !='' THEN @productCat ELSE products.cat END AND products.price LIKE '@productPrice%' AND products.brand = CASE WHEN @productBrand !='' THEN @productBrand ELSE products.brand END AND products.sizes LIKE '%@productSize%' AND products.color LIKE '%@productColor%'
     prod = products.recordset[0];
     try{
