@@ -180,9 +180,9 @@ router.get('/:prodId', async (req, res) => {
 });
 /* GET ONE PRODUCT*/
 router.post('/search', async (req, res) => {
-    let productTitle = req.body.prodModel;
+    let productTitle = req.body.model;
     let productPrice = req.body.price;
-    let productCat = req.body.cat;
+    let productCat = req.body.categorie;
     let productBrand = req.body.brand;
     let productSize = req.body.size
     let productColor = req.body.color;
